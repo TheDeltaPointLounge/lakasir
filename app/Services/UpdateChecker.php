@@ -18,10 +18,27 @@ class UpdateChecker
         return trim(file_get_contents(base_path('version.txt')));
     }
 
+    // CHANGED: Replaced the original method to disable SSL verification
+    // private function fetchAndCacheApiResponse(): ?array
+    // {
+    //     return cache()->remember('api_response', now()->addMinutes(60 * 8), function () {
+    //         $response = Http::get($this->url);
+
+    //         if (! $response->ok()) {
+    //             return null;
+    //         }
+
+    //         return $response->json();
+    //     });
+    // }
+
     private function fetchAndCacheApiResponse(): ?array
     {
         return cache()->remember('api_response', now()->addMinutes(60 * 8), function () {
-            $response = Http::get($this->url);
+            // Disable SSL verification for local development
+            $response = Http::withOptions([
+                'verify' => false, // THIS LINE DISABLES SSL VERIFICATION
+            ])->get($this->url);
 
             if (! $response->ok()) {
                 return null;

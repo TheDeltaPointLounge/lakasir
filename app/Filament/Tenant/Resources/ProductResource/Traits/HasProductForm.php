@@ -81,7 +81,7 @@ trait HasProductForm
             ->gte('initial_price')
             ->stripCharacters(',')
             ->numeric()
-            ->prefix(Setting::get('currency', 'IDR'))
+            ->prefix(Setting::get('currency', 'KES'))
             ->required();
     }
 
@@ -96,7 +96,7 @@ trait HasProductForm
             // ->visible(Feature::active(Product))
             ->stripCharacters(',')
             ->numeric()
-            ->prefix(Setting::get('currency', 'IDR'))
+            ->prefix(Setting::get('currency', 'KES'))
             ->required();
     }
 

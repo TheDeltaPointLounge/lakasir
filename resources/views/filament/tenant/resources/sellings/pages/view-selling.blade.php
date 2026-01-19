@@ -56,10 +56,10 @@
             <tr>
               <td class="p-2 border">
                 <h3 class="text-primary">{{ $detail->product->name }}</h3><span class="text-sm text-secondary"></span></td>
-              <td class="p-2 border text-center text-primary">{{ Number::currency($detail->price_per_unit, Setting::get('currency', 'IDR')) }}</td>
+              <td class="p-2 border text-center text-primary">{{ Number::currency($detail->price_per_unit, Setting::get('currency', 'KES')) }}</td>
               <td class="p-2 border text-center text-primary">{{ $detail->qty }}</td>
-              <td class="p-2 border text-center text-primary">{{ Number::currency($detail->discount_price, Setting::get('currency', 'IDR')) }}</td>
-              <td class="p-2 border text-center text-primary">{{ Number::currency($detail->total_price, Setting::get('currency', 'IDR')) }}</td>
+              <td class="p-2 border text-center text-primary">{{ Number::currency($detail->discount_price, Setting::get('currency', 'KES')) }}</td>
+              <td class="p-2 border text-center text-primary">{{ Number::currency($detail->total_price, Setting::get('currency', 'KES')) }}</td>
             </tr>
           @endforeach
         </tbody>
@@ -67,12 +67,12 @@
           <tr>
             <td class="p-2 border text-center text-primary" colspan="3"></td>
             <td class="p-2 border text-primary text-left">@lang('Subtotal')</td>
-            <td class="p-2 border text-right text-primary">{{ Number::currency($record->total_price, Setting::get('currency', 'IDR')) }}</td>
+            <td class="p-2 border text-right text-primary">{{ Number::currency($record->total_price, Setting::get('currency', 'KES')) }}</td>
           </tr>
           <tr>
             <td class="p-2 border text-center text-primary" colspan="3"></td>
             <td class="p-2 border text-primary text-left">@lang('Discount')</td>
-            <td class="p-2 border text-right text-primary">{{ Number::currency($record->total_discount_per_item + $record->discount_price, Setting::get('currency', 'IDR')) }}</td>
+            <td class="p-2 border text-right text-primary">{{ Number::currency($record->total_discount_per_item + $record->discount_price, Setting::get('currency', 'KES')) }}</td>
           </tr>
           <!---->
           <tr>
@@ -83,22 +83,22 @@
           <tr>
             <td class="p-2 border text-center text-primary" colspan="3"></td>
             <td class="p-2 border text-primary text-left">@lang('Tax price')</td>
-            <td class="p-2 border text-right text-primary">{{ Number::currency($record->tax_price, Setting::get('currency', 'IDR')) }}</td>
+            <td class="p-2 border text-right text-primary">{{ Number::currency($record->tax_price, Setting::get('currency', 'KES')) }}</td>
           </tr>
           <tr>
             <td class="p-2 border text-center text-primary" colspan="3"></td>
             <td class="p-2 border text-primary text-left">@lang('Total')</td>
-            <td class="p-2 border text-right text-primary">{{ Number::currency($record->grand_total_price, Setting::get('currency', 'IDR')) }}</td>
+            <td class="p-2 border text-right text-primary">{{ Number::currency($record->grand_total_price, Setting::get('currency', 'KES')) }}</td>
           </tr>
           <tr>
             <td class="p-2 border text-center text-primary" colspan="3"></td>
             <td class="p-2 border text-primary text-left">@lang('Payed money')</td>
-            <td class="p-2 border text-right text-primary">{{ Number::currency($record->payed_money, Setting::get('currency', 'IDR')) }}</td>
+            <td class="p-2 border text-right text-primary">{{ Number::currency($record->payed_money, Setting::get('currency', 'KES')) }}</td>
           </tr>
           <tr>
             <td class="p-2 border text-center text-primary" colspan="3"></td>
             <td class="p-2 border text-primary text-left">@lang('Money changes')</td>
-            <td class="p-2 border text-right text-primary">{{ Number::currency($record->money_changes, Setting::get('currency', 'IDR')) }}</td>
+            <td class="p-2 border text-right text-primary">{{ Number::currency($record->money_changes, Setting::get('currency', 'KES')) }}</td>
           </tr>
         </tfoot>
       </table>

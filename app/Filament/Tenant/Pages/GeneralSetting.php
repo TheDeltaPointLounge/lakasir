@@ -107,8 +107,8 @@ class GeneralSetting extends Page implements HasActions, HasForms
                         ->schema([
                             Select::make('currency')
                                 ->options([
+                                    'KES' => 'KES',
                                     'IDR' => 'IDR',
-                                    'MXN' => 'MXN',
                                     'USD' => 'USD',
                                 ])
                                 ->translateLabel(),
